@@ -8,18 +8,20 @@ texts = [
 ]
 
 
+def get_index(word, data):
+    for index, line in enumerate(data):
+        if word in line.lower():
+            return index
+    return 0
+
+
 def generate_word_stats(data):
     result = {}
-    for index, line in enumerate(data):
-        for wordList in line.split(" "):
-            word = re.sub(r"\W", "", wordList.lower())
-            if word in result:
-                result[word]['count'] += 1
-            else:
-                result[word] = {
-                    'count': 1,
-                    'index': index
-                }
+    word_list = re.sub(r"[^\w ]", "", ' '.join(data)).lower().split(" ")
+    for word in word_list:
+        result.update({
+            word: dict(count=word_list.count(word), index=get_index(word, data))
+        })
     return result
 
 
