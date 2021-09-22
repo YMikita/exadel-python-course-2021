@@ -33,8 +33,8 @@ def print_menu_items(items):
 
 def execute_menu_action(item):
     title, action = item.values()
-    area_value = round(action(get_triangle_calc_variable(title)))
-    input(f'Area is: {area_value:}.\nFor return enter any key')
+    area_value = action(get_triangle_calc_variable(title))
+    input(f'Area is: {area_value:.2f}.\nFor return enter any key')
 
 
 def menu_controller(menu_item, index):
