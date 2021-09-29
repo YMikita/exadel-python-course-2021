@@ -1,14 +1,9 @@
 def create_user(name: str = "", surname: str = "", age: int = 42, **kwargs):
-    extra = {}
-
-    for key in kwargs:
-        extra[key] = kwargs[key]
-
     return {
         "name": name,
         "surname": surname,
         "age": age,
-        "extra": extra
+        "extra": kwargs
     }
 
 
