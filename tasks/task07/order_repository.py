@@ -3,7 +3,6 @@ from tasks.task07.classes.order import Order
 from tasks.task07.classes.repository_with_abstract import RepositoryWithAbstract
 import uuid as UUID
 
-storage = []
 mockup_client_id = UUID.uuid4()
 mockup_sum = 1.12 + 2.12 + 3.12 + 4.12 + 5.12 + 5.12 + 6.12
 mockup_goods = [
